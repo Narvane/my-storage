@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.narvane</groupId>
+    <artifactId>mystorage</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>model</module>
+        <module>infra</module>
+        <module>api</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- [STR] External dependencies -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>3.1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.28</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- [END] External dependencies -->
+
+            <!-- [STR] Internal dependencies -->
+            <dependency>
+                <groupId>org.narvane</groupId>
+                <artifactId>model</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <scope>compile</scope>
+            </dependency>
+            <!-- [END] Internal dependencies -->
+        </dependencies>
+    </dependencyManagement>
+
+</project>
