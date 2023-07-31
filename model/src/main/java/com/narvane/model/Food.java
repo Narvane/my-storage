@@ -12,6 +12,11 @@ public class Food implements Eatable, Model {
     private Integer carbs;
     private Integer fat;
 
+    public Food(String name) {
+        this.uuid = UUID.randomUUID();
+        this.name = name;
+    }
+
     public Food(UUID uuid, String name) {
         this.uuid = uuid;
         this.name = name;

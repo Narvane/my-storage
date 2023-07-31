@@ -10,7 +10,6 @@ public class CreateMealDTO {
     @Data
     public static class Request implements DTO {
 
-        private String uuid;
         private String name;
         private List<Food> foods;
 

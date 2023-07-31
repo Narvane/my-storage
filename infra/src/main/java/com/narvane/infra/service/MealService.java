@@ -1,4 +1,4 @@
-package com.narvane.model.infra.service;
+package com.narvane.infra.service;
 
 import com.narvane.model.Meal;
 import reactor.core.publisher.Mono;

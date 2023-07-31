@@ -1,4 +1,4 @@
-package com.narvane.model.infra.entity;
+package com.narvane.infra.entity;
 
 public interface EatableEntity {
 

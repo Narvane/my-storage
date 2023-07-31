@@ -1,10 +1,10 @@
-package com.narvane.model.infra.service.impl;
+package com.narvane.infra.service.impl;
 
+import com.narvane.infra.entity.AbstractEntity;
 import com.narvane.model.Model;
-import com.narvane.model.infra.converter.GenericConverter;
-import com.narvane.model.infra.entity.AbstractEntity;
-import com.narvane.model.infra.repository.GenericRepository;
-import com.narvane.model.infra.service.GenericService;
+import com.narvane.infra.converter.GenericConverter;
+import com.narvane.infra.repository.GenericRepository;
+import com.narvane.infra.service.GenericService;
 
 import java.util.UUID;
 
