@@ -10,23 +10,21 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Component
-public class CreateMealRequestConverterImpl implements RequestConverter<Meal, CreateMealDTO.Request> {
+public class CreateMealRequestConverterImpl extends AbstractRequestConverterImpl<Meal, CreateMealDTO.Request> implements RequestConverter<Meal, CreateMealDTO.Request> {
 
     @Override
-    public Meal toModel(CreateMealDTO.Request request) {
+    protected Meal toModel(CreateMealDTO.Request request) {
         var meal = new Meal(request.getName());
 
-        if (request.getFoods() != null) {
-            request.getFoods().forEach(foodRequest -> {
-                var food = Optional.ofNullable(foodRequest.getUuid())
-                        .map(uuid -> new Food(UUID.fromString(uuid), foodRequest.getName()))
-                        .orElse(new Food(foodRequest.getName()));
-                food.setProtein(foodRequest.getProtein());
-                food.setCarbs(foodRequest.getCarbs());
-                food.setFat(foodRequest.getFat());
-                meal.addFood(food);
-            });
-        }
+        request.getFoods().forEach(foodRequest -> {
+            var food = Optional.ofNullable(foodRequest.getUuid())
+                    .map(uuid -> new Food(UUID.fromString(uuid), foodRequest.getName()))
+                    .orElse(new Food(foodRequest.getName()));
+            food.setProtein(foodRequest.getProtein());
+            food.setCarbs(foodRequest.getCarbs());
+            food.setFat(foodRequest.getFat());
+            meal.addFood(food);
+        });
         return meal;
     }
 

@@ -5,23 +5,21 @@ import com.narvane.api.dto.CreateMealDTO;
 import com.narvane.model.Food;
 import com.narvane.model.Meal;
 import org.springframework.stereotype.Component;
-import reactor.core.publisher.Mono;
 
 import java.util.List;
 
 @Component
-public class CreateMealResponseConverterImpl implements ResponseConverter<Meal, CreateMealDTO.Response> {
+public class CreateMealResponseConverterImpl extends AbstractResponseConverterImpl<Meal, CreateMealDTO.Response> implements ResponseConverter<Meal, CreateMealDTO.Response> {
+
     @Override
-    public Mono<CreateMealDTO.Response> toVO(Mono<Meal> monoModel) {
-        return monoModel.map(model ->
-                CreateMealDTO.Response.builder()
-                    .name(model.getName())
-                    .protein(model.getProtein())
-                    .carbs(model.getCarbs())
-                    .fat(model.getFat())
-                    .foods(mapFood(model.getFoods()))
-                .build()
-        );
+    protected CreateMealDTO.Response toResponse(Meal model) {
+        return CreateMealDTO.Response.builder()
+                .name(model.getName())
+                .protein(model.getProtein())
+                .carbs(model.getCarbs())
+                .fat(model.getFat())
+                .foods(mapFood(model.getFoods()))
+                .build();
     }
 
     private List<CreateMealDTO.Response.Food> mapFood(List<Food> foods) {

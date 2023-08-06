@@ -6,15 +6,15 @@ import com.narvane.model.Meal;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MealEntityConverterImpl implements GenericConverter<Meal, MealEntity> {
+public class MealEntityConverterImpl extends AbstractConverterImpl<Meal, MealEntity> implements GenericConverter<Meal, MealEntity> {
 
     @Override
-    public MealEntity toEntity(Meal meal) {
+    protected MealEntity toEntity(Meal meal) {
         return new MealEntity(meal.getUuid(), meal.getName());
     }
 
     @Override
-    public Meal toModel(MealEntity mealEntity) {
+    protected Meal toModel(MealEntity mealEntity) {
         return new Meal(mealEntity.getId(), mealEntity.getName());
     }
 

@@ -5,7 +5,7 @@ import lombok.Data;
 
 import java.util.List;
 
-public class CreateMealDTO {
+public abstract class CreateMealDTO {
 
     @Data
     public static class Request implements DTO {

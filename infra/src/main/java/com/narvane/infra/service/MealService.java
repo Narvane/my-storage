@@ -5,6 +5,6 @@ import reactor.core.publisher.Mono;
 
 public interface MealService {
 
-    Mono<Meal> create(Meal meal);
+    Mono<Meal> create(Mono<Meal> monoMeal);
 
 }

@@ -30,29 +30,27 @@ public class MealServiceImpl extends GenericServiceImpl<Meal, MealEntity> implem
         this.foodConverter = foodConverter;
     }
 
-    public Mono<Meal> create(Meal meal) {
-        var mealEntity = converter.toEntity(meal);
+    public Mono<Meal> create(Mono<Meal> monoMeal) {
+        return monoMeal.flatMap(meal -> {
+            var mealEntityMono = converter.toEntity(Mono.just(meal));
+            var foodFluxEntities = foodConverter.toEntity(Flux.fromIterable(meal.getFoods())).collectList();
 
-        var savedMealEntityMono = repository.save(mealEntity);
+            return mealEntityMono.zipWith(foodFluxEntities).flatMap(tuple -> {
+                var mealEntity = tuple.getT1();
+                var foodsEntities = tuple.getT2();
 
-        var savedFoodsFlux = Flux.fromIterable(meal.getFoods())
-                .flatMap(food -> {
-                    var foodEntity = foodConverter.toEntity(food);
-                    foodEntity.setMealId(mealEntity.getId());
-                    return foodRepository.save(foodEntity);
-                })
-                .collectList();
+                var savedMealEntityMono = repository.save(mealEntity);
+                var savedMealMono = converter.toModel(savedMealEntityMono);
 
-        return savedMealEntityMono.zipWith(savedFoodsFlux)
-                .map(tuple -> {
-                    var savedMealEntity = tuple.getT1();
-                    var savedFoodsEntities = tuple.getT2();
+                return savedMealMono.flatMap(savedMeal -> {
+                    foodsEntities.forEach(foodEntity -> foodEntity.setMealId(savedMeal.getUuid()));
+                    var savedFoodEntitiesFlux = foodRepository.saveAll(foodsEntities);
 
-                    var mealResponse = converter.toModel(savedMealEntity);
-
-                    savedFoodsEntities.stream().map(foodConverter::toModel).forEach(mealResponse::addFood);
-                    return mealResponse;
+                    var savedFoodFlux = foodConverter.toModel(savedFoodEntitiesFlux);
+                    return savedFoodFlux.doOnNext(meal::addFood).then(Mono.just(savedMeal));
                 });
+            });
+        });
     }
 
 }
