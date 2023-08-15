@@ -1,7 +1,12 @@
 package com.narvane.api.converter;
 
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
 public interface RequestConverter<M, VO> {
 
-    M toEntity(VO request);
+    Mono<M> toModel(Mono<VO> monoRequest);
+
+    Flux<M> toModel(Flux<VO> fluxRequest);
 
 }

@@ -1,10 +1,10 @@
-package com.narvane.model.infra.service;
+package com.narvane.infra.service;
 
 import com.narvane.model.Meal;
 import reactor.core.publisher.Mono;
 
 public interface MealService {
 
-    Mono<Meal> create(Meal meal);
+    Mono<Meal> create(Mono<Meal> monoMeal);
 
 }

@@ -5,12 +5,11 @@ import lombok.Data;
 
 import java.util.List;
 
-public class CreateMealDTO {
+public abstract class CreateMealDTO {
 
     @Data
     public static class Request implements DTO {
 
-        private String uuid;
         private String name;
         private List<Food> foods;
 

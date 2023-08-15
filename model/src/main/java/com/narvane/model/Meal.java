@@ -8,10 +8,11 @@ public class Meal implements Eatable, Model {
 
     private UUID uuid;
     private final String name;
-    private List<Food> foods;
+    private final List<Food> foods;
 
     public Meal(String name) {
         this.name = name;
+        this.foods = new ArrayList<>();
     }
 
     public Meal(UUID uuid, String name) {

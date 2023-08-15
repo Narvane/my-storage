@@ -3,13 +3,11 @@ package com.narvane.api.controller;
 import com.narvane.api.converter.RequestConverter;
 import com.narvane.api.converter.ResponseConverter;
 import com.narvane.api.dto.CreateMealDTO;
+import com.narvane.infra.service.MealService;
 import com.narvane.model.Meal;
-import com.narvane.model.infra.service.MealService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -22,9 +20,10 @@ public class MealController {
     private ResponseConverter<Meal, CreateMealDTO.Response> createMealResponseconverter;
 
     @PostMapping("/create")
-    public Mono<CreateMealDTO.Response> create(@RequestBody CreateMealDTO.Request request) {
-        var createdMeal = mealService.create(createMealRequestconverter.toEntity(request));
-        return createMealResponseconverter.toVO(createdMeal);
+    @ResponseStatus(HttpStatus.CREATED)
+    public Mono<CreateMealDTO.Response> create(@RequestBody Mono<CreateMealDTO.Request> request) {
+        var createdMeal = mealService.create(createMealRequestconverter.toModel(request));
+        return createMealResponseconverter.toResponse(createdMeal);
     }
 
 }
