@@ -10,8 +10,7 @@ public class FoodEntityConverterImpl extends AbstractConverterImpl<Food, FoodEnt
 
     @Override
     protected FoodEntity toEntity(Food food) {
-        FoodEntity foodEntity = new FoodEntity();
-        foodEntity.setName(food.getName());
+        FoodEntity foodEntity = new FoodEntity(food.getUuid(), food.getName());
         foodEntity.setProtein(food.getProtein());
         foodEntity.setCarbs(food.getCarbs());
         foodEntity.setFat(food.getFat());

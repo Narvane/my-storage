@@ -47,7 +47,7 @@ public class MealServiceImpl extends GenericServiceImpl<Meal, MealEntity> implem
                     var savedFoodEntitiesFlux = foodRepository.saveAll(foodsEntities);
 
                     var savedFoodFlux = foodConverter.toModel(savedFoodEntitiesFlux);
-                    return savedFoodFlux.doOnNext(meal::addFood).then(Mono.just(savedMeal));
+                    return savedFoodFlux.doOnNext(savedMeal::addFood).then(Mono.just(savedMeal));
                 });
             });
         });

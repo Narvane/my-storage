@@ -10,12 +10,12 @@ public abstract class AbstractConverterImpl<M extends Model, E extends AbstractE
 
     @Override
     public Mono<E> toEntity(Mono<M> monoModel) {
-        return monoModel.map(this::toEntity);
+        return monoModel.map(this::toEntityHandlingNew);
     }
 
     @Override
     public Flux<E> toEntity(Flux<M> fluxModel) {
-        return fluxModel.map(this::toEntity);
+        return fluxModel.map(this::toEntityHandlingNew);
     }
 
     @Override
@@ -26,6 +26,12 @@ public abstract class AbstractConverterImpl<M extends Model, E extends AbstractE
     @Override
     public Flux<M> toModel(Flux<E> fluxEntity) {
         return fluxEntity.map(this::toModel);
+    }
+
+    private E toEntityHandlingNew(M model) {
+        E entity = toEntity(model);
+        entity.setNew();
+        return entity;
     }
 
     protected abstract E toEntity(M model);

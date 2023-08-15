@@ -6,12 +6,11 @@ import java.util.UUID;
 
 public class Meal implements Eatable, Model {
 
-    private final UUID uuid;
+    private UUID uuid;
     private final String name;
     private final List<Food> foods;
 
     public Meal(String name) {
-        this.uuid = UUID.randomUUID();
         this.name = name;
         this.foods = new ArrayList<>();
     }

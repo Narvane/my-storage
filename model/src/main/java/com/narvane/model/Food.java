@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class Food implements Eatable, Model {
 
-    private final UUID uuid;
+    private UUID uuid;
     private final String name;
 
     private Integer protein;
@@ -13,7 +13,6 @@ public class Food implements Eatable, Model {
     private Integer fat;
 
     public Food(String name) {
-        this.uuid = UUID.randomUUID();
         this.name = name;
     }
 

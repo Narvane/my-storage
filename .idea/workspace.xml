@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="Starting infra with webflux">
-      <change afterPath="$PROJECT_DIR$/api/src/test/java/com/narvane/api/controller/MealControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/GenericConverterImpl.java" afterDir="false" />
+    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="Idea of logic helper">
+      <change afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/AbstractEntityImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/controller/MealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/controller/MealController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/ResponseConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/ResponseConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/impl/request/CreateMealRequestConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/impl/request/CreateMealRequestConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/impl/response/CreateMealResponseConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/impl/response/CreateMealResponseConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/dto/CreateMealDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/dto/CreateMealDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/GenericConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/GenericConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/AbstractConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/AbstractConverterImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/FoodEntityConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/FoodEntityConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/MealEntityConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/MealEntityConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/service/MealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/service/MealService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/AbstractEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/FoodEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/FoodEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/MealEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/MealEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/service/impl/MealServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/service/impl/MealServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="infra_webflux_logic_helper" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,8 +95,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Gustavo\IdeaProjects\mystorage\model\src\main\java\com\narvane" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.narvane.api.converter.impl.response" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.MealControllerTest.should_create_without_foods">
+  <component name="RunManager" selected="JUnit.MealControllerTest.testCreateMeal">
     <configuration name="All in mystorage-endpoints" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/mystorage-endpoints.http">
       <method v="2" />
     </configuration>
@@ -117,6 +117,22 @@
       <option name="PACKAGE_NAME" value="com.narvane.api.controller" />
       <option name="MAIN_CLASS_NAME" value="com.narvane.api.controller.MealControllerTest" />
       <option name="METHOD_NAME" value="should_create_without_foods" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MealControllerTest.testCreateMeal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.narvane.api.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.narvane.api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.narvane.api.controller.MealControllerTest" />
+      <option name="METHOD_NAME" value="testCreateMeal" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,10 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MealControllerTest.testCreateMeal" />
         <item itemvalue="JUnit.MealControllerTest.should_create_without_foods" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="HTTP Request.All in mystorage-endpoints" />
         <item itemvalue="HTTP Request.post-requests | Send POST request with json body" />
+        <item itemvalue="HTTP Request.All in mystorage-endpoints" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +192,8 @@
       <workItem from="1690149197620" duration="1387000" />
       <workItem from="1690832623868" duration="13745000" />
       <workItem from="1691266483843" duration="17510000" />
-      <workItem from="1691324514058" duration="4831000" />
+      <workItem from="1691324514058" duration="10658000" />
+      <workItem from="1692138264039" duration="3983000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit - Create 3 projects, separating Model, Infra and API. Prepared codebase around 1 POST request. Not tested.">
       <created>1690148332461</created>
@@ -212,7 +230,21 @@
       <option name="project" value="LOCAL" />
       <updated>1690846317204</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adjusting create meal request, with new concepts learned">
+      <created>1691330628946</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1691330628946</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Idea of logic helper">
+      <created>1691345483323</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1691345483323</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +265,8 @@
     <MESSAGE value="Initial commit - Create 3 projects, separating Model, Infra and API. Prepared codebase around 1 POST request. Not tested." />
     <MESSAGE value="Refactoring usando underclasses nos DTOs" />
     <MESSAGE value="Starting infra with webflux" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting infra with webflux" />
+    <MESSAGE value="Adjusting create meal request, with new concepts learned" />
+    <MESSAGE value="Idea of logic helper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Idea of logic helper" />
   </component>
 </project>

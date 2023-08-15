@@ -1,7 +1,6 @@
 package com.narvane.infra.entity;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
@@ -12,8 +11,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
-public class FoodEntity implements AbstractEntity<UUID> {
+public class FoodEntity extends AbstractEntityImpl implements AbstractEntity<UUID> {
 
     @Id
     private UUID id;
@@ -29,11 +27,6 @@ public class FoodEntity implements AbstractEntity<UUID> {
     public FoodEntity(UUID id, String name) {
         this.id = id;
         this.name = name;
-    }
-
-    @Override
-    public boolean isNew() {
-        return true;
     }
 
 }

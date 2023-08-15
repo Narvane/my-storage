@@ -8,4 +8,6 @@ public interface AbstractEntity<ID> extends Persistable<ID> {
 
     void setId(ID id);
 
+    void setNew();
+
 }
