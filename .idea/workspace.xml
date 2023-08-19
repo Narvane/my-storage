@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="Implement generation ID Logic">
-      <change afterPath="$PROJECT_DIR$/infra-mvc/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/config/PostgresConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/GenericConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/AbstractConverterImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/MealEntityConverterImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/AbstractEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/EatableEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/FoodEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/MealEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/FoodRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/GenericRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/MealRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/service/GenericService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/service/MealService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/service/impl/GenericServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/service/impl/MealServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/src/main/resources/migration/V0001__create-database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="Init of API and Infra mvc" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="infra_webflux_logic_helper" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -238,7 +209,7 @@
       <workItem from="1692395041719" duration="3471000" />
       <workItem from="1692399510971" duration="7314000" />
       <workItem from="1692475483380" duration="7035000" />
-      <workItem from="1692486126982" duration="21000" />
+      <workItem from="1692486126982" duration="694000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit - Create 3 projects, separating Model, Infra and API. Prepared codebase around 1 POST request. Not tested.">
       <created>1690148332461</created>
@@ -289,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691345483323</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Init of API and Infra mvc">
+      <created>1692486211334</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1692486211334</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +293,8 @@
     <MESSAGE value="Starting infra with webflux" />
     <MESSAGE value="Adjusting create meal request, with new concepts learned" />
     <MESSAGE value="Idea of logic helper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Idea of logic helper" />
+    <MESSAGE value="Init of API and Infra mvc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init of API and Infra mvc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
