@@ -1,8 +1,6 @@
 package com.narvane.model;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class Meal implements Eatable, Model {
 
@@ -43,17 +41,35 @@ public class Meal implements Eatable, Model {
 
     @Override
     public Integer getProtein() {
-        return foods.stream().mapToInt(Food::getProtein).sum();
+        return foods.stream()
+                .map(Food::getProtein)
+                .filter(Objects::nonNull)
+                .mapToInt(Integer::intValue)
+                .boxed()
+                .reduce(Integer::sum)
+                .orElse(null);
     }
 
     @Override
     public Integer getCarbs() {
-        return foods.stream().mapToInt(Food::getCarbs).sum();
+        return foods.stream()
+                .map(Food::getCarbs)
+                .filter(Objects::nonNull)
+                .mapToInt(Integer::intValue)
+                .boxed()
+                .reduce(Integer::sum)
+                .orElse(null);
     }
 
     @Override
     public Integer getFat() {
-        return foods.stream().mapToInt(Food::getFat).sum();
+        return foods.stream()
+                .map(Food::getFat)
+                .filter(Objects::nonNull)
+                .mapToInt(Integer::intValue)
+                .boxed()
+                .reduce(Integer::sum)
+                .orElse(null);
     }
 
 }

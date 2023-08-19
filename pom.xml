@@ -13,6 +13,9 @@
         <module>model</module>
         <module>infra</module>
         <module>api</module>
+        <module>infra-mvc</module>
+        <module>api-mvc</module>
+        <module>migrations</module>
     </modules>
 
     <properties>
