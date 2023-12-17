@@ -1,6 +1,7 @@
 package com.narvane.model;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 
 public class Food implements Eatable, Model {

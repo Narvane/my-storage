@@ -11,8 +11,11 @@
 
     <modules>
         <module>model</module>
-        <module>infra</module>
-        <module>api</module>
+        <module>infra-flux</module>
+        <module>api-webflux</module>
+        <module>infra-mvc</module>
+        <module>api-webmvc</module>
+        <module>migrations</module>
     </modules>
 
     <properties>

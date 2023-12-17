@@ -1,6 +1,0 @@
-spring:
-  flyway:
-    url: jdbc:postgresql://localhost:5432/my-storage
-    locations: classpath:db/migration
-    user: root
-    password: root

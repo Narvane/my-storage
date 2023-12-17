@@ -4,17 +4,78 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="Idea of logic helper">
-      <change afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/AbstractEntityImpl.java" afterDir="false" />
+    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="Init of API and Infra mvc">
+      <change afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/entity/MealFoodsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/repository/MealFoodsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/AbstractConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/AbstractConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/FoodEntityConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/FoodEntityConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/AbstractEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/FoodEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/FoodEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/MealEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/MealEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/service/impl/MealServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/service/impl/MealServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/java/com/narvane/apimvc/ApiMvcApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/ApiWebMvcApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/java/com/narvane/apimvc/controller/MealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/MealController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/java/com/narvane/apimvc/converter/DTOConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/DTOConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/java/com/narvane/apimvc/converter/RequestConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/RequestConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/java/com/narvane/apimvc/converter/ResponseConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/ResponseConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/java/com/narvane/apimvc/converter/impl/request/AbstractRequestConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/request/AbstractRequestConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/java/com/narvane/apimvc/converter/impl/request/CreateMealRequestConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/request/CreateMealRequestConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/java/com/narvane/apimvc/converter/impl/response/AbstractResponseConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/response/AbstractResponseConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/java/com/narvane/apimvc/converter/impl/response/CreateMealResponseConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/response/CreateMealResponseConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/java/com/narvane/apimvc/dto/CreateMealDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/dto/CreateMealDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/java/com/narvane/apimvc/dto/DTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/dto/DTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mvc/src/test/java/com/narvane/apimvc/ApiMvcApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/test/java/com/narvane/apimvc/ApiWebMvcApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/ApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/ApiWebFluxApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/controller/MealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/controller/MealController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/DTOConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/converter/DTOConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/RequestConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/converter/RequestConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/ResponseConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/converter/ResponseConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/impl/request/AbstractRequestConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/converter/impl/request/AbstractRequestConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/impl/request/CreateMealRequestConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/converter/impl/request/CreateMealRequestConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/impl/response/AbstractResponseConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/converter/impl/response/AbstractResponseConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/converter/impl/response/CreateMealResponseConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/converter/impl/response/CreateMealResponseConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/dto/CreateMealDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/dto/CreateMealDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/narvane/api/dto/DTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/dto/DTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/narvane/api/ApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/test/java/com/narvane/apiflux/ApiWebFluxApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/config/DatabaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/config/DatabaseConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/config/PostgresConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/config/PostgresConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/GenericConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/converter/GenericConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/AbstractConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/converter/impl/AbstractConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/FoodEntityConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/converter/impl/FoodEntityConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/converter/impl/MealEntityConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/converter/impl/MealEntityConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/entity/AbstractEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/AbstractEntityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/entity/AbstractEntityImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/EatableEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/entity/EatableEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/FoodEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/entity/FoodEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/entity/MealEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/entity/MealEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/repository/FoodRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/repository/FoodRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/repository/GenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/repository/GenericRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/repository/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/repository/MealRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/service/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/service/GenericService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/service/MealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/service/MealService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/service/impl/GenericServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/service/impl/GenericServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/java/com/narvane/infra/service/impl/MealServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/service/impl/MealServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/main/resources/db/migration/V0001__create-database.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/src/test/java/com/narvane/infra/InfraApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/test/java/com/narvane/infra/InfraApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/src/main/resources/migration/V0001__create-database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/src/main/resources/migration/V0001__create-database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,18 +85,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="infra_webflux_logic_helper" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="HttpClientSelectedEnvironments">
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
@@ -60,46 +122,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gustavo/IdeaProjects/importantProjects/mystorage&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;8a27f01c5ed65b4074b824d15c210c61&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/Gustavo/IdeaProjects/frront-end/my-storage-front",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "db3e90ea6de7e2d529dbc380b4df6b9f",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gustavo\IdeaProjects\importantProjects\mystorage\migrations\src\main\resources" />
+      <recent name="C:\Users\Gustavo\IdeaProjects\importantProjects\mystorage\api-mvc\src\main\java\com\narvane\apimvc" />
       <recent name="C:\Users\Gustavo\IdeaProjects\mystorage\model\src\main\java\com\narvane" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.narvane.api.converter.impl.response" />
+      <recent name="com.narvane.inframvc.config" />
+      <recent name="com.narvane.converter.impl" />
+      <recent name="com.narvane.converter" />
+      <recent name="com.narvane.repository" />
+      <recent name="com.narvane.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MealControllerTest.testCreateMeal">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ApiWebFluxApplication">
     <configuration name="All in mystorage-endpoints" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/mystorage-endpoints.http">
       <method v="2" />
     </configuration>
@@ -107,10 +182,10 @@
       <method v="2" />
     </configuration>
     <configuration name="MealControllerTest.should_create_without_foods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="api" />
+      <module name="api-webflux" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.narvane.api.controller.*" />
+          <option name="PATTERN" value="com.narvane.apiflux.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,10 +198,10 @@
       </method>
     </configuration>
     <configuration name="MealControllerTest.testCreateMeal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="api" />
+      <module name="api-webflux" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.narvane.api.controller.*" />
+          <option name="PATTERN" value="com.narvane.apiflux.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,15 +213,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="api" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.narvane.api.ApiApplication" />
+    <configuration name="ApiWebFluxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api-webflux" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.narvane.apiflux.ApiWebFluxApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiWebMvcApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api-webmvc" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.narvane.apimvc.ApiWebMvcApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="InfraApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="infra" />
+      <module name="infra-flux" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.narvane.infra.InfraApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,6 +258,16 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="HTTP Request.All in mystorage-endpoints" />
+      <item itemvalue="HTTP Request.post-requests | Send POST request with json body" />
+      <item itemvalue="JUnit.MealControllerTest.should_create_without_foods" />
+      <item itemvalue="JUnit.MealControllerTest.testCreateMeal" />
+      <item itemvalue="Spring Boot.ApiWebMvcApplication" />
+      <item itemvalue="Spring Boot.ApiWebFluxApplication" />
+      <item itemvalue="Spring Boot.InfraApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.MealControllerTest.testCreateMeal" />
@@ -194,6 +296,16 @@
       <workItem from="1691266483843" duration="17510000" />
       <workItem from="1691324514058" duration="10658000" />
       <workItem from="1692138264039" duration="3983000" />
+      <workItem from="1692223104204" duration="9728000" />
+      <workItem from="1692312511608" duration="4602000" />
+      <workItem from="1692395041719" duration="3471000" />
+      <workItem from="1692399510971" duration="7314000" />
+      <workItem from="1692475483380" duration="7035000" />
+      <workItem from="1692486126982" duration="1360000" />
+      <workItem from="1692553453953" duration="1802000" />
+      <workItem from="1692559869132" duration="6417000" />
+      <workItem from="1692567901391" duration="5463000" />
+      <workItem from="1699523602184" duration="39000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit - Create 3 projects, separating Model, Infra and API. Prepared codebase around 1 POST request. Not tested.">
       <created>1690148332461</created>
@@ -244,7 +356,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691345483323</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Init of API and Infra mvc">
+      <created>1692486211334</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1692486211334</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Init of API and Infra mvc">
+      <created>1692487194399</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1692487194399</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,11 +388,36 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/api-mvc" />
+    </ignored-roots>
     <MESSAGE value="Initial commit - Create 3 projects, separating Model, Infra and API. Prepared codebase around 1 POST request. Not tested." />
     <MESSAGE value="Refactoring usando underclasses nos DTOs" />
     <MESSAGE value="Starting infra with webflux" />
     <MESSAGE value="Adjusting create meal request, with new concepts learned" />
     <MESSAGE value="Idea of logic helper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Idea of logic helper" />
+    <MESSAGE value="Init of API and Infra mvc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init of API and Infra mvc" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/controller/MealController.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/controller/MealController.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/service/impl/MealServiceImpl.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
