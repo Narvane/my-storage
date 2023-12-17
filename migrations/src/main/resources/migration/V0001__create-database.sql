@@ -17,6 +17,7 @@ CREATE TABLE MEAL
 
 CREATE TABLE MEAL_FOODS
 (
+    id      UUID     NOT NULL,
     meal_id UUID     NOT NULL,
     food_id UUID     NOT NULL
 );

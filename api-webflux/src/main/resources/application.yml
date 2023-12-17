@@ -1,0 +1,8 @@
+spring:
+  webflux:
+    base-path: /web-flux
+  flyway:
+    url: jdbc:postgresql://localhost:5432/my-storage
+    locations: filesystem:migrations/src/main/resources/migration
+    user: root
+    password: root
