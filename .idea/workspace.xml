@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="New start">
-      <change afterPath="$PROJECT_DIR$/model/src/test/java/com/narvane/model/MealTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" afterDir="false" />
+    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="Meal unitary test">
+      <change beforePath="$PROJECT_DIR$/api-webmvc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +113,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MealTest">
+  <component name="RunManager" selected="Spring Boot.ApiWebMvcApplication">
     <configuration name="MealTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="model" />
       <extension name="coverage">
@@ -144,22 +140,6 @@
       <option name="PACKAGE_NAME" value="com.narvane.model" />
       <option name="MAIN_CLASS_NAME" value="com.narvane.model.MealTest" />
       <option name="METHOD_NAME" value="should_do_nothing_when_remove_not_existent_food" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MealTest.should_not_have_an_issue_with_empty_or_partially_empty_food_lists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="model" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.narvane.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.narvane.model" />
-      <option name="MAIN_CLASS_NAME" value="com.narvane.model.MealTest" />
-      <option name="METHOD_NAME" value="should_not_have_an_issue_with_empty_or_partially_empty_food_lists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -234,10 +214,23 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="postgres" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
       <item itemvalue="JUnit.MealTest" />
       <item itemvalue="JUnit.MealTest.should_do_nothing_when_remove_not_existent_food" />
-      <item itemvalue="JUnit.MealTest.should_not_have_an_issue_with_empty_or_partially_empty_food_lists" />
       <item itemvalue="JUnit.MealTest.should_remove_food_by_its_object" />
       <item itemvalue="JUnit.MealTest.should_remove_food_if_given_a_new_instance_with_same_id" />
       <item itemvalue="Spring Boot.ApiWebMvcApplication" />
@@ -246,11 +239,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
         <item itemvalue="JUnit.MealTest" />
         <item itemvalue="JUnit.MealTest.should_remove_food_if_given_a_new_instance_with_same_id" />
         <item itemvalue="JUnit.MealTest.should_do_nothing_when_remove_not_existent_food" />
-        <item itemvalue="JUnit.MealTest.should_remove_food_by_its_object" />
-        <item itemvalue="JUnit.MealTest.should_not_have_an_issue_with_empty_or_partially_empty_food_lists" />
       </list>
     </recent_temporary>
   </component>
@@ -346,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692487194399</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Meal unitary test">
+      <created>1702842665654</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1702842665654</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +374,8 @@
     <MESSAGE value="Idea of logic helper" />
     <MESSAGE value="Init of API and Infra mvc" />
     <MESSAGE value="New start" />
-    <option name="LAST_COMMIT_MESSAGE" value="New start" />
+    <MESSAGE value="Meal unitary test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Meal unitary test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -398,7 +399,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/mystorage$MealTest.ic" NAME="MealTest Coverage Results" MODIFIED="1702840831733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/mystorage$MealTest.ic" NAME="MealTest Coverage Results" MODIFIED="1702842574680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.narvane.model.*</FILTER>
     </SUITE>
   </component>
