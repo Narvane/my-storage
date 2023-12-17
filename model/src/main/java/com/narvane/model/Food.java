@@ -7,11 +7,15 @@ import java.util.UUID;
 public class Food implements Eatable, Model {
 
     private UUID uuid;
-    private final String name;
+    private String name;
 
     private Integer protein;
     private Integer carbs;
     private Integer fat;
+
+    public Food(UUID uuid) {
+        this.uuid = uuid;
+    }
 
     public Food(String name) {
         this.name = name;
@@ -20,6 +24,14 @@ public class Food implements Eatable, Model {
     public Food(UUID uuid, String name) {
         this.uuid = uuid;
         this.name = name;
+    }
+
+    public Food(UUID uuid, String name, Integer protein, Integer carbs, Integer fat) {
+        this.uuid = uuid;
+        this.name = name;
+        this.protein = protein;
+        this.carbs = carbs;
+        this.fat = fat;
     }
 
     public UUID getUuid() {

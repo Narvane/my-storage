@@ -1,12 +1,18 @@
 package com.narvane.model;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Meal implements Eatable, Model {
 
     private UUID uuid;
-    private final String name;
+    private String name;
     private final List<Food> foods;
+
+    public Meal(UUID uuid) {
+        this.uuid = uuid;
+        this.foods = new ArrayList<>();
+    }
 
     public Meal(String name) {
         this.name = name;
@@ -28,7 +34,21 @@ public class Meal implements Eatable, Model {
     }
 
     public void addFood(Food food) {
-        foods.add(food);
+        if (food != null) {
+            foods.add(food);
+        }
+    }
+
+    public void addFoods(List<Food> foods) {
+        if (foods != null && !foods.isEmpty()) {
+            foods.forEach(this::addFood);
+        }
+    }
+
+    public void addFoods(Food... foods) {
+        if (foods != null) {
+            this.addFoods(Arrays.stream(foods).collect(Collectors.toList()));
+        }
     }
 
     public void removeFood(Food food) {
