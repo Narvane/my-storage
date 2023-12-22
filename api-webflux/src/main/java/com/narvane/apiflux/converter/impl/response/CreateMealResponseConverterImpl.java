@@ -13,13 +13,15 @@ public class CreateMealResponseConverterImpl extends AbstractResponseConverterIm
 
     @Override
     protected CreateMealDTO.Response toResponse(Meal model) {
-        return CreateMealDTO.Response.builder()
+        // Pause webflux
+        /*return CreateMealDTO.Response.builder()
                 .name(model.getName())
                 .protein(model.getProtein())
                 .carbs(model.getCarbs())
                 .fat(model.getFat())
                 .foods(mapFood(model.getFoods()))
-                .build();
+                .build();*/
+        return null;
     }
 
     private List<CreateMealDTO.Response.Food> mapFood(List<Food> foods) {

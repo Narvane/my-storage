@@ -3,30 +3,28 @@ package com.narvane.model;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Meal implements Eatable, Model {
+public class Meal extends GenericModel implements Eatable, Model {
 
-    private UUID uuid;
     private String name;
-    private final List<Food> foods;
+    private final Set<Food> foods;
 
     public Meal(UUID uuid) {
+        super(false);
         this.uuid = uuid;
-        this.foods = new ArrayList<>();
+        this.foods = new HashSet<>();
     }
 
     public Meal(String name) {
+        super(true);
         this.name = name;
-        this.foods = new ArrayList<>();
+        this.foods = new HashSet<>();
     }
 
     public Meal(UUID uuid, String name) {
+        super(false);
         this.uuid = uuid;
         this.name = name;
-        this.foods = new ArrayList<>();
-    }
-
-    public UUID getUuid() {
-        return uuid;
+        this.foods = new HashSet<>();
     }
 
     public String getName() {
@@ -39,15 +37,19 @@ public class Meal implements Eatable, Model {
         }
     }
 
-    public void addFoods(List<Food> foods) {
+    public void addFoods(Set<Food> foods) {
         if (foods != null && !foods.isEmpty()) {
             foods.forEach(this::addFood);
         }
     }
 
+    public void updateFoods(Set<Food> foods) {
+        this.addFoods(foods);
+    }
+
     public void addFoods(Food... foods) {
         if (foods != null) {
-            this.addFoods(Arrays.stream(foods).collect(Collectors.toList()));
+            this.addFoods(Arrays.stream(foods).collect(Collectors.toSet()));
         }
     }
 
@@ -55,7 +57,7 @@ public class Meal implements Eatable, Model {
         foods.remove(food);
     }
 
-    public List<Food> getFoods() {
+    public Set<Food> getFoods() {
         return foods;
     }
 
@@ -92,4 +94,16 @@ public class Meal implements Eatable, Model {
                 .orElse(null);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Meal meal = (Meal) o;
+        return Objects.equals(uuid, meal.uuid);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, foods);
+    }
 }

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -64,7 +65,7 @@ class MealTest {
     public void should_not_have_an_issue_with_empty_or_partially_empty_food_lists() {
         Meal meal = new Meal(UUID.randomUUID(), "Hamburger");
 
-        meal.addFoods((List<Food>) null);
+        meal.addFoods((Set<Food>) null);
         assertEquals(0, meal.getFoods().size());
 
         meal.addFoods(null, null);

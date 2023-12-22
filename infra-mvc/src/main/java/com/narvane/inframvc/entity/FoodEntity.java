@@ -11,14 +11,8 @@ import java.util.UUID;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 @Table(name = "FOOD")
-public class FoodEntity implements AbstractEntity<UUID> {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "id", nullable = false)
-    private UUID id;
+public class FoodEntity extends AbstractEntityImpl implements AbstractEntity<UUID> {
 
     private String name;
     private Integer protein;
@@ -26,8 +20,13 @@ public class FoodEntity implements AbstractEntity<UUID> {
     private Integer fat;
 
     public FoodEntity(UUID id, String name) {
+        super(false);
         this.id = id;
         this.name = name;
+    }
+
+    public FoodEntity() {
+        super(true);
     }
 
     @Override

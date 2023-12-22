@@ -1,4 +1,4 @@
-package com.narvane.inframvc.repository;
+package com.narvane.inframvc.repository.jpa;
 
 import com.narvane.inframvc.entity.AbstractEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

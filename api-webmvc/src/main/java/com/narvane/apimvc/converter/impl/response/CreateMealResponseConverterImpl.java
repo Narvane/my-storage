@@ -7,6 +7,7 @@ import com.narvane.model.Meal;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Set;
 
 @Component
 public class CreateMealResponseConverterImpl extends AbstractResponseConverterImpl<Meal, CreateMealDTO.Response> implements ResponseConverter<Meal, CreateMealDTO.Response> {
@@ -22,7 +23,7 @@ public class CreateMealResponseConverterImpl extends AbstractResponseConverterIm
                 .build();
     }
 
-    private List<CreateMealDTO.Response.Food> mapFood(List<Food> foods) {
+    private List<CreateMealDTO.Response.Food> mapFood(Set<Food> foods) {
         return foods.stream().map(food -> {
             var foodResponse = new CreateMealDTO.Response.Food();
             foodResponse.setName(food.getName());

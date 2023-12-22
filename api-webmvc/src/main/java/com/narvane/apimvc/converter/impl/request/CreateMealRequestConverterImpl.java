@@ -15,7 +15,7 @@ public class CreateMealRequestConverterImpl extends AbstractRequestConverterImpl
     @Override
     public Meal toModel(CreateMealDTO.Request request) {
         var meal = new Meal(request.getName());
-
+        //Converter de food!
         request.getFoods().forEach(foodRequest -> {
             var food = Optional.ofNullable(foodRequest.getUuid())
                     .map(uuid -> new Food(UUID.fromString(uuid), foodRequest.getName()))

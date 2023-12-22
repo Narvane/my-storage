@@ -4,23 +4,14 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
 @Table(name = "MEAL")
-public class MealEntity implements AbstractEntity<UUID> {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "id", nullable = false)
-    private UUID id;
+public class MealEntity extends AbstractEntityImpl implements AbstractEntity<UUID> {
 
     private String name;
 
@@ -31,24 +22,18 @@ public class MealEntity implements AbstractEntity<UUID> {
             inverseJoinColumns = @JoinColumn(name = "food_id")
     )
     @ToString.Exclude
-    private List<FoodEntity> foods;
+    private Set<FoodEntity> foods;
 
     public MealEntity() {
-        this.foods = new ArrayList<>();
+        super(true);
+        this.foods = new HashSet<>();
     }
 
     public MealEntity(UUID id, String name) {
+        super(false);
         this.id = id;
         this.name = name;
-        this.foods = new ArrayList<>();
-    }
-
-    public void addFood(FoodEntity foodEntity) {
-        foods.add(foodEntity);
-    }
-
-    public void removeFood(FoodEntity foodEntity) {
-        foods.remove(foodEntity);
+        this.foods = new HashSet<>();
     }
 
     @Override

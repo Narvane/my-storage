@@ -21,6 +21,7 @@ public class MealEntityConverterImpl extends AbstractConverterImpl<Meal, MealEnt
     @Override
     public MealEntity toEntity(Meal meal) {
         var mealEntity = new MealEntity(meal.getUuid(), meal.getName());
+        mealEntity.setNew(meal.isNew());
         mealEntity.setFoods(foodEntityConverter.toEntities(meal.getFoods()));
 
         return mealEntity;

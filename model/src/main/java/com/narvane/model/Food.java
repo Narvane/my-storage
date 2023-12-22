@@ -4,9 +4,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
-public class Food implements Eatable, Model {
+public class Food extends GenericModel implements Eatable, Model {
 
-    private UUID uuid;
     private String name;
 
     private Integer protein;
@@ -14,28 +13,28 @@ public class Food implements Eatable, Model {
     private Integer fat;
 
     public Food(UUID uuid) {
+        super(false);
         this.uuid = uuid;
     }
 
     public Food(String name) {
+        super(true);
         this.name = name;
     }
 
     public Food(UUID uuid, String name) {
+        super(false);
         this.uuid = uuid;
         this.name = name;
     }
 
     public Food(UUID uuid, String name, Integer protein, Integer carbs, Integer fat) {
+        super(false);
         this.uuid = uuid;
         this.name = name;
         this.protein = protein;
         this.carbs = carbs;
         this.fat = fat;
-    }
-
-    public UUID getUuid() {
-        return uuid;
     }
 
     public String getName() {

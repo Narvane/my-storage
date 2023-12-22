@@ -3,7 +3,7 @@ package com.narvane.inframvc.repository.impl;
 import com.narvane.inframvc.converter.GenericConverter;
 import com.narvane.inframvc.entity.FoodEntity;
 import com.narvane.inframvc.repository.FoodInfraRepository;
-import com.narvane.inframvc.repository.GenericJpaRepository;
+import com.narvane.inframvc.repository.jpa.GenericJpaRepository;
 import com.narvane.model.Food;
 import com.narvane.repository.FoodRepository;
 import org.springframework.stereotype.Repository;

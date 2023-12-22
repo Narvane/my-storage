@@ -2,14 +2,12 @@ package com.narvane.inframvc.repository.impl;
 
 import com.narvane.inframvc.converter.GenericConverter;
 import com.narvane.inframvc.entity.AbstractEntity;
-import com.narvane.inframvc.repository.GenericJpaRepository;
+import com.narvane.inframvc.repository.jpa.GenericJpaRepository;
 import com.narvane.model.Model;
 import com.narvane.repository.GenericRepository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class GenericInfraRepositoryImpl<M extends Model, E extends AbstractEntity<UUID>> implements GenericRepository<M> {
 
@@ -33,13 +31,19 @@ public class GenericInfraRepositoryImpl<M extends Model, E extends AbstractEntit
 
         models.forEach(model -> {
             E entity = converter.toEntity(model);
-            if (entity.isNew()) {
-                this.create(model);
+            if (entity.isNewId()) {
+                savedModels.add(this.create(model));
+            } else {
+                savedModels.add(this.findById(entity.getId()).orElse(null));
             }
-            savedModels.add(this.findById(entity.getId()).orElse(null));
         });
 
         return savedModels;
+    }
+
+    @Override
+    public Set<M> createAll(Set<M> models) {
+        return new HashSet<>(this.createAll(models.stream().toList()));
     }
 
     @Override

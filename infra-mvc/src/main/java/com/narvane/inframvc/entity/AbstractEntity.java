@@ -6,9 +6,9 @@ public interface AbstractEntity<ID> {
 
     void setId(ID id);
 
-    default boolean isNew() {
-        return getId() == null;
-    }
+    boolean isNewId();
+
+    void setNew(boolean newId);
 
 }
 

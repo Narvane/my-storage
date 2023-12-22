@@ -5,7 +5,6 @@ import com.narvane.repository.FoodRepository;
 import com.narvane.repository.GenericRepository;
 import com.narvane.service.meal.MealService;
 
-//TODO Inject Bean & do generic impl
 public class MealServiceImpl extends GenericServiceImpl<Meal> implements MealService {
 
     private final FoodRepository foodRepository;
@@ -16,13 +15,11 @@ public class MealServiceImpl extends GenericServiceImpl<Meal> implements MealSer
     }
 
     @Override
-    public Meal create(Meal model) {
-        var createdFoods = this.foodRepository.createAll(model.getFoods());
-        var createdMeal = repository.create(model);
+    public Meal create(Meal meal) {
+        var createdFoods = this.foodRepository.createAll(meal.getFoods());
+        meal.updateFoods(createdFoods);
 
-        createdFoods.forEach(createdMeal::addFoods);
-
-        return createdMeal;
+        return repository.create(meal);
     }
 
 }
