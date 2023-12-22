@@ -4,8 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="Meal unitary test">
-      <change beforePath="$PROJECT_DIR$/api-webmvc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/pom.xml" afterDir="false" />
+    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="Added swagger">
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/FoodController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/StorageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/FoodEntityConverterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/FoodInfraRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/GenericInfraRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/MealInfraRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/FoodInfraRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/GenericInfraRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/MealInfraRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/History.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Movement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/MovementType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Shelves.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Storage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/repository/FoodRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/repository/GenericRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/repository/MealRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/repository/StorageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/GenericService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/impl/GenericServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/impl/MealServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/storage/StorageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/storage/StorageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/MealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/MealController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/config/PostgresConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/config/PostgresConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/MealEntityConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/MealEntityConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/FoodRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/GenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/GenericJpaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/MealRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/service/GenericService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/service/MealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/MealService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/service/impl/GenericServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/service/impl/MealServiceImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +48,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,36 +86,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Gustavo/IdeaProjects/frront-end/my-storage-front",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "spring.configuration.checksum": "db3e90ea6de7e2d529dbc380b4df6b9f",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gustavo/IdeaProjects/frront-end/my-storage-front&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;18809e4e5107596fe89922cbbad4ad0c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -99,11 +132,11 @@
       <recent name="com.narvane.model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.narvane.service.meal" />
       <recent name="com.narvane.inframvc.config" />
       <recent name="com.narvane.converter.impl" />
       <recent name="com.narvane.converter" />
       <recent name="com.narvane.repository" />
-      <recent name="com.narvane.service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -275,6 +308,10 @@
       <workItem from="1692559869132" duration="6417000" />
       <workItem from="1692567901391" duration="5463000" />
       <workItem from="1699523602184" duration="39000" />
+      <workItem from="1703104838475" duration="8673000" />
+      <workItem from="1703157339173" duration="3906000" />
+      <workItem from="1703202730461" duration="2596000" />
+      <workItem from="1703242071149" duration="6889000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit - Create 3 projects, separating Model, Infra and API. Prepared codebase around 1 POST request. Not tested.">
       <created>1690148332461</created>
@@ -346,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702842665654</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added swagger">
+      <created>1702843904192</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1702843904192</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +419,8 @@
     <MESSAGE value="Init of API and Infra mvc" />
     <MESSAGE value="New start" />
     <MESSAGE value="Meal unitary test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Meal unitary test" />
+    <MESSAGE value="Added swagger" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added swagger" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

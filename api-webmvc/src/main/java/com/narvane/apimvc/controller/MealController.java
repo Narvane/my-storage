@@ -4,7 +4,7 @@ import com.narvane.apimvc.converter.RequestConverter;
 import com.narvane.apimvc.converter.ResponseConverter;
 import com.narvane.apimvc.dto.CreateMealDTO;
 import com.narvane.model.Meal;
-import com.narvane.inframvc.service.MealService;
+import com.narvane.service.meal.MealService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
