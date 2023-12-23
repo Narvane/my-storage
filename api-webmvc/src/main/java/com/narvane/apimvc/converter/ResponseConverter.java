@@ -8,4 +8,6 @@ public interface ResponseConverter<M, DTO> {
 
     List<DTO> toResponse(List<M> modelList);
 
+    Class<?> converterOf();
+
 }

@@ -1,25 +1,31 @@
 package com.narvane.service.meal.impl;
 
+import com.narvane.exception.MealWithoutFoodsException;
 import com.narvane.model.Meal;
-import com.narvane.repository.FoodRepository;
 import com.narvane.repository.GenericRepository;
+import com.narvane.service.food.FoodService;
 import com.narvane.service.meal.MealService;
 
 public class MealServiceImpl extends GenericServiceImpl<Meal> implements MealService {
 
-    private final FoodRepository foodRepository;
+    private final FoodService foodService;
 
-    public MealServiceImpl(GenericRepository<Meal> repository, FoodRepository foodRepository) {
+    public MealServiceImpl(GenericRepository<Meal> repository, FoodService foodService) {
         super(repository);
-        this.foodRepository = foodRepository;
+        this.foodService = foodService;
     }
 
     @Override
     public Meal create(Meal meal) {
-        var createdFoods = this.foodRepository.createAll(meal.getFoods());
+
+        if (meal.haveAnyFood()) {
+            throw new MealWithoutFoodsException();
+        }
+
+        var createdFoods = this.foodService.createAll(meal.getFoods());
         meal.updateFoods(createdFoods);
 
-        return repository.create(meal);
+        return super.create(meal);
     }
 
 }

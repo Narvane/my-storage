@@ -1,28 +1,27 @@
 package com.narvane.apimvc.dto;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
 
-public abstract class CreateMealDTO {
+public abstract class UpdateMealDTO {
 
     @Data
     public static class Request implements DTO {
 
-        @NotEmpty(message = "meal.name.must.not.be.empty")
-        private String name;
+        @NotNull
+        private String id;
 
-        @Valid
-        @NotNull(message = "meal.foods.must.not.be.null")
-        @NotEmpty(message = "meal.must.contain.at.least.one.food")
+        private String name;
         private List<Food> foods;
 
         @Data
         public static class Food {
+
+            @NotNull
+            private String id;
 
             private String uuid;
             private String name;
@@ -39,6 +38,8 @@ public abstract class CreateMealDTO {
     @Builder
     public static class Response implements DTO {
 
+        private String id;
+
         private String name;
         private Integer protein;
         private Integer carbs;
@@ -47,6 +48,8 @@ public abstract class CreateMealDTO {
 
         @Data
         public static class Food {
+
+            private String id;
 
             private String name;
 

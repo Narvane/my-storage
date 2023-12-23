@@ -4,34 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="General code improvements, like services and repositories on model and etc">
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/AbstractEntityImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/jpa/FoodJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/jpa/MealJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/GenericModel.java" afterDir="false" />
+    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="General code improvements">
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/AbstractController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/converters/MealConverters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/request/UpdateMealRequestConverterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/response/UpdateMealResponseConverterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/dto/UpdateMealDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/exception/details/ApiValidationExceptionDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/resources/messages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/resources/messages_pt_BR.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/exception/MealWithoutFoodsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/exception/OpaqueFoodException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/exception/ValidationServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/food/FoodService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/food/impl/FoodServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/converter/impl/response/CreateMealResponseConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/converter/impl/response/CreateMealResponseConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-webmvc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/MealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/MealController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/RequestConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/RequestConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/ResponseConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/ResponseConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/request/CreateMealRequestConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/request/CreateMealRequestConverterImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/response/CreateMealResponseConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/response/CreateMealResponseConverterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/dto/CreateMealDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/dto/CreateMealDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/config/PostgresConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/config/PostgresConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/GenericConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/GenericConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/AbstractConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/AbstractConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/FoodEntityConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/FoodEntityConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/MealEntityConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/MealEntityConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/AbstractEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/FoodEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/FoodEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/MealEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/MealEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/GenericJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/jpa/GenericJpaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/FoodInfraRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/FoodInfraRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/GenericInfraRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/GenericInfraRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/MealInfraRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/MealInfraRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/src/main/resources/migration/V0001__create-database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/src/main/resources/migration/V0001__create-database.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/repository/GenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/repository/GenericRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/GenericService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/impl/GenericServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/impl/GenericServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/impl/MealServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/impl/MealServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/test/java/com/narvane/model/MealTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/test/java/com/narvane/model/MealTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +46,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -125,11 +130,11 @@
       <recent name="com.narvane.model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.narvane.apimvc.converter.impl.response" />
+      <recent name="com.narvane.apimvc.converter.impl.request" />
+      <recent name="com.narvane.apimvc.dto" />
       <recent name="com.narvane.service.meal" />
       <recent name="com.narvane.inframvc.config" />
-      <recent name="com.narvane.converter.impl" />
-      <recent name="com.narvane.converter" />
-      <recent name="com.narvane.repository" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -304,7 +309,8 @@
       <workItem from="1703104838475" duration="8673000" />
       <workItem from="1703157339173" duration="3906000" />
       <workItem from="1703202730461" duration="2596000" />
-      <workItem from="1703242071149" duration="16448000" />
+      <workItem from="1703242071149" duration="21850000" />
+      <workItem from="1703337683207" duration="8893000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit - Create 3 projects, separating Model, Infra and API. Prepared codebase around 1 POST request. Not tested.">
       <created>1690148332461</created>
@@ -390,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703254474194</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="General code improvements">
+      <created>1703266536111</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703266536111</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +434,8 @@
     <MESSAGE value="Meal unitary test" />
     <MESSAGE value="Added swagger" />
     <MESSAGE value="General code improvements, like services and repositories on model and etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="General code improvements, like services and repositories on model and etc" />
+    <MESSAGE value="General code improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="General code improvements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -442,19 +456,9 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/MealController.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/GenericInfraRepositoryImpl.java</url>
           <line>29</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/GenericInfraRepositoryImpl.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/request/CreateMealRequestConverterImpl.java</url>
@@ -492,19 +496,19 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/GenericInfraRepositoryImpl.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/GenericInfraRepositoryImpl.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/FoodEntityConverterImpl.java</url>
           <line>22</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/MealController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/exception/GlobalExceptionHandler.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

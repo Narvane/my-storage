@@ -2,6 +2,7 @@ package com.narvane.apimvc.converter.impl.request;
 
 import com.narvane.apimvc.converter.RequestConverter;
 import com.narvane.apimvc.dto.CreateMealDTO;
+import com.narvane.apimvc.dto.UpdateMealDTO;
 import com.narvane.model.Food;
 import com.narvane.model.Meal;
 import org.springframework.stereotype.Component;
@@ -10,11 +11,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Component
-public class CreateMealRequestConverterImpl extends AbstractRequestConverterImpl<Meal, CreateMealDTO.Request> implements RequestConverter<Meal, CreateMealDTO.Request> {
+public class UpdateMealRequestConverterImpl extends AbstractRequestConverterImpl<Meal, UpdateMealDTO.Request> implements RequestConverter<Meal, UpdateMealDTO.Request> {
 
     @Override
-    public Meal toModel(CreateMealDTO.Request request) {
-        var meal = new Meal(request.getName());
+    public Meal toModel(UpdateMealDTO.Request request) {
+        var meal = new Meal(UUID.fromString(request.getId()), request.getName());
         //Converter de food!
         request.getFoods().forEach(foodRequest -> {
             var food = Optional.ofNullable(foodRequest.getUuid())
@@ -30,7 +31,7 @@ public class CreateMealRequestConverterImpl extends AbstractRequestConverterImpl
 
     @Override
     public Class<?> converterOf() {
-        return CreateMealDTO.Request.class;
+        return UpdateMealDTO.Request.class;
     }
 
 }

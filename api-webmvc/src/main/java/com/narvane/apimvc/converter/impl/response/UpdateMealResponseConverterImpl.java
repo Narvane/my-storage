@@ -2,6 +2,7 @@ package com.narvane.apimvc.converter.impl.response;
 
 import com.narvane.apimvc.converter.ResponseConverter;
 import com.narvane.apimvc.dto.CreateMealDTO;
+import com.narvane.apimvc.dto.UpdateMealDTO;
 import com.narvane.model.Food;
 import com.narvane.model.Meal;
 import org.springframework.stereotype.Component;
@@ -10,11 +11,12 @@ import java.util.List;
 import java.util.Set;
 
 @Component
-public class CreateMealResponseConverterImpl extends AbstractResponseConverterImpl<Meal, CreateMealDTO.Response> implements ResponseConverter<Meal, CreateMealDTO.Response> {
+public class UpdateMealResponseConverterImpl extends AbstractResponseConverterImpl<Meal, UpdateMealDTO.Response> implements ResponseConverter<Meal, UpdateMealDTO.Response> {
 
     @Override
-    public CreateMealDTO.Response toResponse(Meal model) {
-        return CreateMealDTO.Response.builder()
+    public UpdateMealDTO.Response toResponse(Meal model) {
+        return UpdateMealDTO.Response.builder()
+                .id(model.getUuid().toString())
                 .name(model.getName())
                 .protein(model.getProtein())
                 .carbs(model.getCarbs())
@@ -25,12 +27,13 @@ public class CreateMealResponseConverterImpl extends AbstractResponseConverterIm
 
     @Override
     public Class<?> converterOf() {
-        return CreateMealDTO.Response.class;
+        return UpdateMealDTO.Response.class;
     }
 
-    private List<CreateMealDTO.Response.Food> mapFood(Set<Food> foods) {
+    private List<UpdateMealDTO.Response.Food> mapFood(Set<Food> foods) {
         return foods.stream().map(food -> {
-            var foodResponse = new CreateMealDTO.Response.Food();
+            var foodResponse = new UpdateMealDTO.Response.Food();
+            foodResponse.setId(food.getUuid().toString());
             foodResponse.setName(food.getName());
             foodResponse.setProtein(food.getProtein());
             foodResponse.setCarbs(food.getCarbs());

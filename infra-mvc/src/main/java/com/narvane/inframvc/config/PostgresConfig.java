@@ -11,6 +11,8 @@ import com.narvane.model.Food;
 import com.narvane.model.Meal;
 import com.narvane.repository.FoodRepository;
 import com.narvane.repository.MealRepository;
+import com.narvane.service.food.FoodService;
+import com.narvane.service.food.impl.FoodServiceImpl;
 import com.narvane.service.meal.MealService;
 import com.narvane.service.meal.impl.MealServiceImpl;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -36,8 +38,13 @@ public class PostgresConfig {
     }
 
     @Bean
-    MealService mealService(final MealRepository mealRepository, final FoodRepository foodRepository) {
-        return new MealServiceImpl(mealRepository, foodRepository);
+    FoodService foodService(final FoodRepository foodRepository) {
+        return new FoodServiceImpl(foodRepository);
+    }
+
+    @Bean
+    MealService mealService(final MealRepository mealRepository, final FoodService foodService) {
+        return new MealServiceImpl(mealRepository, foodService);
     }
 
 }

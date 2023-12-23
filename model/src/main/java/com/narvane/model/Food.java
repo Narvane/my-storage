@@ -68,6 +68,10 @@ public class Food extends GenericModel implements Eatable, Model {
         this.fat = fat;
     }
 
+    public boolean isEmptyNamed() {
+        return name == null || name.equals("");
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

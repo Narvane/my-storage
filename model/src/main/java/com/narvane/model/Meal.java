@@ -61,6 +61,10 @@ public class Meal extends GenericModel implements Eatable, Model {
         return foods;
     }
 
+    public boolean haveAnyFood() {
+        return foods.isEmpty();
+    }
+
     @Override
     public Integer getProtein() {
         return foods.stream()

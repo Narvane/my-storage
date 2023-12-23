@@ -3,6 +3,9 @@ server:
     context-path: /web-mvc
   port: 8081
 spring:
+  messages:
+    basename: messages
+    encoding: UTF-8
   datasource:
     url: jdbc:postgresql://localhost:5432/my-storage
     username: root
