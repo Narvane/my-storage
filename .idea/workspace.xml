@@ -4,51 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="Exception treatments, bean validations and service validations. Internationalization. Baseline">
-      <change afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/datadispatcher/MealDataDispatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/exception/ModelNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/AbstractIdentityModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/IdentityModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Portion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Portions.java" afterDir="false" />
+    <list default="true" id="8ea5e1fe-19bf-4de3-90cd-d25c038eaf89" name="Changes" comment="Refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/converter/impl/request/CreateMealRequestConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webflux/src/main/java/com/narvane/apiflux/converter/impl/request/CreateMealRequestConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/AbstractController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/MealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/MealController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/controller/converters/MealConverters.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/RequestConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/RequestConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/request/CreateMealRequestConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/request/CreateMealRequestConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/request/UpdateMealRequestConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/request/UpdateMealRequestConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/response/CreateMealResponseConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/response/CreateMealResponseConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/response/UpdateMealResponseConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/converter/impl/response/UpdateMealResponseConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/dto/CreateMealDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/dto/CreateMealDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/dto/UpdateMealDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/dto/UpdateMealDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/java/com/narvane/apimvc/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/resources/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-webmvc/src/main/resources/messages_pt_BR.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-webmvc/src/main/resources/messages_pt_BR.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/service/impl/MealServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-flux/src/main/java/com/narvane/infra/service/impl/MealServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/config/PostgresConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/config/PostgresConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/MealEntityConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/converter/impl/MealEntityConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/MealEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/entity/MealEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/GenericInfraRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/infra-mvc/src/main/java/com/narvane/inframvc/repository/impl/GenericInfraRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/src/main/resources/migration/V0001__create-database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/src/main/resources/migration/V0001__create-database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/GenericModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/History.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Meal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Movement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/MovementType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Shelves.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/model/Storage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/repository/GenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/repository/GenericRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/repository/StorageRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/GenericService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/impl/GenericServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/impl/GenericServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/impl/MealServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/meal/impl/MealServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/storage/StorageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/narvane/service/storage/StorageServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/test/java/com/narvane/model/MealTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/test/java/com/narvane/model/MealTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,7 +286,8 @@
       <workItem from="1703857981316" duration="14374000" />
       <workItem from="1704556368884" duration="7163000" />
       <workItem from="1706695707726" duration="6934000" />
-      <workItem from="1706866713504" duration="5475000" />
+      <workItem from="1706866713504" duration="5924000" />
+      <workItem from="1706873077604" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit - Create 3 projects, separating Model, Infra and API. Prepared codebase around 1 POST request. Not tested.">
       <created>1690148332461</created>
@@ -429,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703348248431</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Refactoring">
+      <created>1706872631844</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1706872631844</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +427,8 @@
     <MESSAGE value="General code improvements, like services and repositories on model and etc" />
     <MESSAGE value="General code improvements" />
     <MESSAGE value="Exception treatments, bean validations and service validations. Internationalization. Baseline" />
-    <option name="LAST_COMMIT_MESSAGE" value="Exception treatments, bean validations and service validations. Internationalization. Baseline" />
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
