@@ -10,6 +10,4 @@ public interface RequestConverter<M, VO> {
 
     List<M> toModel(List<VO> requestList);
 
-    Class<?> converterOf();
-
 }

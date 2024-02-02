@@ -15,8 +15,6 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.stream.Collectors;
-
 @Service
 public class MealServiceImpl extends GenericServiceImpl<Meal, MealEntity> implements MealService {
 
@@ -38,9 +36,9 @@ public class MealServiceImpl extends GenericServiceImpl<Meal, MealEntity> implem
     }
 
     public Mono<Meal> create(Mono<Meal> monoMeal) {
-        return monoMeal.flatMap(meal -> {
+        /*return monoMeal.flatMap(meal -> {
             var mealEntityMono = converter.toEntity(Mono.just(meal));
-            var foodFluxEntities = foodConverter.toEntity(Flux.fromIterable(meal.getFoods())).collectList();
+            var foodFluxEntities = foodConverter.toEntity(Flux.fromIterable(meal.getPortions())).collectList();
 
             return mealEntityMono.zipWith(foodFluxEntities).flatMap(tuple -> {
                 var mealEntity = tuple.getT1();
@@ -62,10 +60,11 @@ public class MealServiceImpl extends GenericServiceImpl<Meal, MealEntity> implem
                             .flatMap(mealFoodsEntity -> foodRepository.findById(mealFoodsEntity.getFoodId()));
 
                     var savedFoodFlux = foodConverter.toModel(Flux.merge(newSavedFoodEntitiesFlux, existentFoodEntities));
-                    return savedFoodFlux.doOnNext(savedMeal::addFood).then(Mono.just(savedMeal));
+                    return savedFoodFlux.doOnNext(savedMeal::addPortion).then(Mono.just(savedMeal));
                 });
             });
-        });
+        });*/
+        return null;
     }
 
 }

@@ -2,7 +2,7 @@ package com.narvane.model;
 
 import java.util.UUID;
 
-abstract class GenericModel implements Model {
+abstract class AbstractIdentityModel implements IdentityModel {
 
     protected UUID uuid;
 
@@ -18,7 +18,7 @@ abstract class GenericModel implements Model {
         return newIdentity;
     }
 
-    public GenericModel(boolean newIdentity) {
+    public AbstractIdentityModel(boolean newIdentity) {
         this.newIdentity = newIdentity;
         if (this.newIdentity) {
             this.uuid = UUID.randomUUID();
@@ -30,3 +30,4 @@ abstract class GenericModel implements Model {
     }
 
 }
+

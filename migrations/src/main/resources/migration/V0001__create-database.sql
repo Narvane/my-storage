@@ -15,13 +15,16 @@ CREATE TABLE MEAL
     CONSTRAINT pk_meal_entity PRIMARY KEY (id)
 );
 
-CREATE TABLE MEAL_FOODS
+CREATE TABLE MEAL_PORTIONS
 (
     meal_id UUID     NOT NULL,
-    food_id UUID     NOT NULL
+    food_id UUID     NOT NULL,
+    amount INT       NOT NULL
 );
 
-ALTER TABLE MEAL_FOODS
+ALTER TABLE MEAL_PORTIONS
+    ADD CONSTRAINT fk_meal_portions
+        PRIMARY KEY (meal_id, food_id),
     ADD CONSTRAINT fk_meal
         FOREIGN KEY (meal_id) REFERENCES MEAL(id),
     ADD CONSTRAINT fk_food

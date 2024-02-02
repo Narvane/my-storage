@@ -1,48 +1,33 @@
 package com.narvane.apimvc.controller;
 
-import com.narvane.apimvc.converter.RequestConverter;
-import com.narvane.apimvc.converter.ResponseConverter;
 import com.narvane.apimvc.dto.CreateMealDTO;
 import com.narvane.apimvc.dto.UpdateMealDTO;
-import com.narvane.model.Meal;
-import com.narvane.service.meal.MealService;
+import com.narvane.apimvc.datadispatcher.MealDataDispatcher;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/meal")
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Validated
-public class MealController extends AbstractController<Meal> {
+public class MealController {
 
-    private MealService mealService;
-    private RequestConverter<Meal, CreateMealDTO.Request> createMealRequestConverter;
-    private ResponseConverter<Meal, CreateMealDTO.Response> createMealResponseConverter;
-
-    private RequestConverter<Meal, UpdateMealDTO.Request> updateMealRequestConverter;
-    private ResponseConverter<Meal, UpdateMealDTO.Response> updateMealResponseConverter;
+    private final MealDataDispatcher dataDispatcher;
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public CreateMealDTO.Response create(@RequestBody @Valid CreateMealDTO.Request request) {
-        return createMealResponseConverter.toResponse(
-                mealService.create(createMealRequestConverter.toModel(request))
-        );
+        return dataDispatcher.newMeal(request);
     }
 
-    /*@PutMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public UpdateMealDTO.Response update(@RequestBody UpdateMealDTO.Request request) {
-        return updateMealResponseConverter.toResponse(
-                mealService.create(updateMealRequestConverter.toModel(request))
-        );
-    }*/
+        return dataDispatcher.existentMeal(request);
+    }
 
 }

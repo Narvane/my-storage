@@ -1,7 +1,6 @@
 package com.narvane.apimvc.converter.impl.response;
 
 import com.narvane.apimvc.converter.ResponseConverter;
-import com.narvane.apimvc.dto.CreateMealDTO;
 import com.narvane.apimvc.dto.UpdateMealDTO;
 import com.narvane.model.Food;
 import com.narvane.model.Meal;
@@ -21,7 +20,7 @@ public class UpdateMealResponseConverterImpl extends AbstractResponseConverterIm
                 .protein(model.getProtein())
                 .carbs(model.getCarbs())
                 .fat(model.getFat())
-                .foods(mapFood(model.getFoods()))
+                /*.foods(mapFood(model.getPortions()))*/
                 .build();
     }
 

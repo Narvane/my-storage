@@ -22,8 +22,6 @@ public abstract class UpdateMealDTO {
 
             @NotNull
             private String id;
-
-            private String uuid;
             private String name;
 
             private Integer protein;

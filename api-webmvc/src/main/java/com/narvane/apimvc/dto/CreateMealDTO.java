@@ -19,12 +19,20 @@ public abstract class CreateMealDTO {
         @Valid
         @NotNull(message = "meal.foods.must.not.be.null")
         @NotEmpty(message = "meal.must.contain.at.least.one.food")
-        private List<Food> foods;
+        private List<Portion> portions;
+
+        @Data
+        public static class Portion {
+
+            private Food food;
+            private Integer amount;
+
+        }
 
         @Data
         public static class Food {
 
-            private String uuid;
+            private String id;
             private String name;
 
             private Integer protein;
@@ -39,17 +47,26 @@ public abstract class CreateMealDTO {
     @Builder
     public static class Response implements DTO {
 
+        private String id;
         private String name;
         private Integer protein;
         private Integer carbs;
         private Integer fat;
-        private List<Food> foods;
+        private List<Portion> portions;
+
+        @Data
+        public static class Portion {
+
+            private Food food;
+            private Integer amount;
+
+        }
 
         @Data
         public static class Food {
 
+            private String id;
             private String name;
-
             private Integer protein;
             private Integer carbs;
             private Integer fat;

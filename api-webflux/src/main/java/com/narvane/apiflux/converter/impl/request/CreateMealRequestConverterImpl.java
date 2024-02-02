@@ -16,15 +16,15 @@ public class CreateMealRequestConverterImpl extends AbstractRequestConverterImpl
     protected Meal toModel(CreateMealDTO.Request request) {
         var meal = new Meal(request.getName());
 
-        request.getFoods().forEach(foodRequest -> {
+        /*request.getFoods().forEach(foodRequest -> {
             var food = Optional.ofNullable(foodRequest.getUuid())
                     .map(uuid -> new Food(UUID.fromString(uuid), foodRequest.getName()))
                     .orElse(new Food(foodRequest.getName()));
             food.setProtein(foodRequest.getProtein());
             food.setCarbs(foodRequest.getCarbs());
             food.setFat(foodRequest.getFat());
-            meal.addFood(food);
-        });
+            meal.addPortion(food);
+        });*/
         return meal;
     }
 

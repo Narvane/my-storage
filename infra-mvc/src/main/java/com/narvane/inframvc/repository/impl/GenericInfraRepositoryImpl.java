@@ -7,7 +7,6 @@ import com.narvane.model.Model;
 import com.narvane.repository.GenericRepository;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class GenericInfraRepositoryImpl<M extends Model, E extends AbstractEntity<UUID>> implements GenericRepository<M> {
 
@@ -21,6 +20,12 @@ public class GenericInfraRepositoryImpl<M extends Model, E extends AbstractEntit
 
     @Override
     public M create(M model) {
+        E entity = converter.toEntity(model);
+        return converter.toModel(jpaRepository.save(entity));
+    }
+
+    @Override
+    public M update(M model) {
         E entity = converter.toEntity(model);
         return converter.toModel(jpaRepository.save(entity));
     }

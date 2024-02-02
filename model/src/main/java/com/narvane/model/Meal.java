@@ -1,101 +1,80 @@
 package com.narvane.model;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
-public class Meal extends GenericModel implements Eatable, Model {
+public class Meal extends AbstractIdentityModel implements Eatable, IdentityModel {
 
     private String name;
-    private final Set<Food> foods;
 
-    public Meal(UUID uuid) {
+    private final Portions portions;
+
+    public Meal(UUID uuid, Portions portions) {
         super(false);
         this.uuid = uuid;
-        this.foods = new HashSet<>();
+        this.portions = new Portions();
     }
 
     public Meal(String name) {
         super(true);
         this.name = name;
-        this.foods = new HashSet<>();
+        this.portions = new Portions();
     }
 
     public Meal(UUID uuid, String name) {
         super(false);
         this.uuid = uuid;
         this.name = name;
-        this.foods = new HashSet<>();
+        this.portions = new Portions();
     }
 
     public String getName() {
         return name;
     }
 
-    public void addFood(Food food) {
+    public void addPortion(Food food, Integer amount) {
         if (food != null) {
-            foods.add(food);
+            if (!portions.of(food).exist()) {
+                addPortion(food);
+            }
+            portions.of(food).update(amount);
         }
     }
 
-    public void addFoods(Set<Food> foods) {
-        if (foods != null && !foods.isEmpty()) {
-            foods.forEach(this::addFood);
+    public void addPortion(Food food) {
+        if (food != null) {
+            portions.newOf(food);
         }
     }
 
-    public void updateFoods(Set<Food> foods) {
-        this.addFoods(foods);
-    }
-
-    public void addFoods(Food... foods) {
-        if (foods != null) {
-            this.addFoods(Arrays.stream(foods).collect(Collectors.toSet()));
-        }
+    public void update(Meal updated) {
+        this.name = updated.getName();
     }
 
     public void removeFood(Food food) {
-        foods.remove(food);
+        portions.of(food).remove();
     }
 
-    public Set<Food> getFoods() {
-        return foods;
+    public Portions getPortions() {
+        return portions;
     }
 
     public boolean haveAnyFood() {
-        return foods.isEmpty();
+        return !portions.isEmpty();
     }
 
     @Override
     public Integer getProtein() {
-        return foods.stream()
-                .map(Food::getProtein)
-                .filter(Objects::nonNull)
-                .mapToInt(Integer::intValue)
-                .boxed()
-                .reduce(Integer::sum)
-                .orElse(null);
+        return portions.getTotalProtein();
     }
 
     @Override
     public Integer getCarbs() {
-        return foods.stream()
-                .map(Food::getCarbs)
-                .filter(Objects::nonNull)
-                .mapToInt(Integer::intValue)
-                .boxed()
-                .reduce(Integer::sum)
-                .orElse(null);
+        return portions.getTotalCarbs();
     }
 
     @Override
     public Integer getFat() {
-        return foods.stream()
-                .map(Food::getFat)
-                .filter(Objects::nonNull)
-                .mapToInt(Integer::intValue)
-                .boxed()
-                .reduce(Integer::sum)
-                .orElse(null);
+        return portions.getTotalFat();
     }
 
     @Override
@@ -108,6 +87,7 @@ public class Meal extends GenericModel implements Eatable, Model {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, foods);
+        return Objects.hash(name, portions);
     }
+
 }

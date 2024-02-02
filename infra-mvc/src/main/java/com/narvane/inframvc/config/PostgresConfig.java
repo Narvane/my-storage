@@ -42,6 +42,7 @@ public class PostgresConfig {
         return new FoodServiceImpl(foodRepository);
     }
 
+
     @Bean
     MealService mealService(final MealRepository mealRepository, final FoodService foodService) {
         return new MealServiceImpl(mealRepository, foodService);

@@ -4,13 +4,18 @@ import com.narvane.model.Model;
 
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 public interface GenericService<M extends Model> {
 
     M create(M model);
 
-    List<M> createAll(List<M> models);
+    M update(M model);
 
-    Set<M> createAll(Set<M> models);
+    M findById(UUID id);
+
+    List<M> createOrUpdateAll(List<M> models);
+
+    Set<M> createOrUpdateAll(Set<M> models);
 
 }

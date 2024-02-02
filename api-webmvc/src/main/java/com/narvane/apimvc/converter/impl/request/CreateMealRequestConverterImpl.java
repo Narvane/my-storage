@@ -15,22 +15,24 @@ public class CreateMealRequestConverterImpl extends AbstractRequestConverterImpl
     @Override
     public Meal toModel(CreateMealDTO.Request request) {
         var meal = new Meal(request.getName());
-        //Converter de food!
-        request.getFoods().forEach(foodRequest -> {
-            var food = Optional.ofNullable(foodRequest.getUuid())
-                    .map(uuid -> new Food(UUID.fromString(uuid), foodRequest.getName()))
-                    .orElse(new Food(foodRequest.getName()));
-            food.setProtein(foodRequest.getProtein());
-            food.setCarbs(foodRequest.getCarbs());
-            food.setFat(foodRequest.getFat());
-            meal.addFood(food);
+
+        request.getPortions().forEach(portionDto -> {
+            var foodDto = portionDto.getFood();
+
+            var food = Optional.ofNullable(foodDto.getId())
+                    .map(uuid -> new Food(UUID.fromString(uuid), foodDto.getName()))
+                    .orElse(new Food(foodDto.getName()));
+
+            food.setProtein(foodDto.getProtein());
+            food.setCarbs(foodDto.getCarbs());
+            food.setFat(foodDto.getFat());
+
+            meal.addPortion(
+                    food,
+                    portionDto.getAmount()
+            );
         });
         return meal;
-    }
-
-    @Override
-    public Class<?> converterOf() {
-        return CreateMealDTO.Request.class;
     }
 
 }

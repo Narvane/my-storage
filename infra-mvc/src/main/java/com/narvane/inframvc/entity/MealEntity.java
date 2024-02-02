@@ -1,10 +1,15 @@
 package com.narvane.inframvc.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -15,25 +20,23 @@ public class MealEntity extends AbstractEntityImpl implements AbstractEntity<UUI
 
     private String name;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "MEAL_FOODS",
-            joinColumns = @JoinColumn(name = "meal_id"),
-            inverseJoinColumns = @JoinColumn(name = "food_id")
-    )
-    @ToString.Exclude
-    private Set<FoodEntity> foods;
+    @ElementCollection
+    @CollectionTable(name = "MEAL_PORTIONS",
+            joinColumns = {@JoinColumn(name = "meal_id")})
+    @MapKeyJoinColumn(name = "food_id")
+    @Column(name = "amount", nullable = false)
+    private Map<FoodEntity, Integer> portions;
 
     public MealEntity() {
         super(true);
-        this.foods = new HashSet<>();
+        this.portions = new HashMap<>();
     }
 
     public MealEntity(UUID id, String name) {
         super(false);
         this.id = id;
         this.name = name;
-        this.foods = new HashSet<>();
+        this.portions = new HashMap<>();
     }
 
     @Override

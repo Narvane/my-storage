@@ -18,14 +18,21 @@ public class MealServiceImpl extends GenericServiceImpl<Meal> implements MealSer
     @Override
     public Meal create(Meal meal) {
 
-        if (meal.haveAnyFood()) {
+        if (!meal.haveAnyFood()) {
             throw new MealWithoutFoodsException();
         }
-
-        var createdFoods = this.foodService.createAll(meal.getFoods());
-        meal.updateFoods(createdFoods);
-
+        this.foodService.createOrUpdateAll(
+                meal.getPortions().getFoodSet()
+        );
+        //Verificar se precisa ser a entidade managed ou só mandar o ID já é valido
         return super.create(meal);
+    }
+
+    @Override
+    public Meal update(Meal updatedMeal) {
+        Meal mealToUpdate = this.findById(updatedMeal.getUuid());
+        mealToUpdate.update(updatedMeal);
+        return super.update(mealToUpdate);
     }
 
 }

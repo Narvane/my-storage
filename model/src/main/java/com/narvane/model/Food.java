@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
-public class Food extends GenericModel implements Eatable, Model {
+public class Food extends AbstractIdentityModel implements Eatable, IdentityModel {
 
     private String name;
 
@@ -39,6 +39,13 @@ public class Food extends GenericModel implements Eatable, Model {
 
     public String getName() {
         return name;
+    }
+
+    public void update(Food update) {
+        this.name = update.getName();
+        this.protein = update.getProtein();
+        this.carbs = update.getCarbs();
+        this.fat = update.getFat();
     }
 
     @Override

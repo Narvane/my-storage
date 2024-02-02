@@ -11,6 +11,8 @@ public interface GenericRepository<M extends Model> {
 
     M create(M model);
 
+    M update(M model);
+
     List<M> createAll(List<M> models);
 
     Set<M> createAll(Set<M> models);
