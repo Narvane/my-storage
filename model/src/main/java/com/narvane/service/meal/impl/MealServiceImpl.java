@@ -30,7 +30,7 @@ public class MealServiceImpl extends GenericServiceImpl<Meal> implements MealSer
 
     @Override
     public Meal update(Meal updatedMeal) {
-        Meal mealToUpdate = this.findById(updatedMeal.getUuid());
+        Meal mealToUpdate = this.findById(updatedMeal.getId());
         mealToUpdate.update(updatedMeal);
         return super.update(mealToUpdate);
     }

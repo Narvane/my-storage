@@ -15,11 +15,12 @@ public class UpdateMealResponseConverterImpl extends AbstractResponseConverterIm
     @Override
     public UpdateMealDTO.Response toResponse(Meal model) {
         return UpdateMealDTO.Response.builder()
-                .id(model.getUuid().toString())
+                .id(model.getId().toString())
                 .name(model.getName())
                 .protein(model.getProtein())
                 .carbs(model.getCarbs())
                 .fat(model.getFat())
+                // TODO Later infra
                 /*.foods(mapFood(model.getPortions()))*/
                 .build();
     }
@@ -32,7 +33,7 @@ public class UpdateMealResponseConverterImpl extends AbstractResponseConverterIm
     private List<UpdateMealDTO.Response.Food> mapFood(Set<Food> foods) {
         return foods.stream().map(food -> {
             var foodResponse = new UpdateMealDTO.Response.Food();
-            foodResponse.setId(food.getUuid().toString());
+            foodResponse.setId(food.getId().toString());
             foodResponse.setName(food.getName());
             foodResponse.setProtein(food.getProtein());
             foodResponse.setCarbs(food.getCarbs());

@@ -1,5 +1,8 @@
 package com.narvane.model;
 
+import com.narvane.model.interfaces.Model;
+import com.narvane.model.interfaces.Portion;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;

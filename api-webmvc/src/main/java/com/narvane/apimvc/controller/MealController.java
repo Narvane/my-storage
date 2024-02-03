@@ -1,10 +1,8 @@
 package com.narvane.apimvc.controller;
 
-import com.narvane.apimvc.dto.CreateMealDTO;
-import com.narvane.apimvc.dto.UpdateMealDTO;
 import com.narvane.apimvc.datadispatcher.MealDataDispatcher;
+import com.narvane.apimvc.dto.CreateMealDTO;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
@@ -24,10 +22,11 @@ public class MealController {
         return dataDispatcher.newMeal(request);
     }
 
-    @PutMapping("/update")
+    // TODO Later infra
+    /*@PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public UpdateMealDTO.Response update(@RequestBody UpdateMealDTO.Request request) {
         return dataDispatcher.existentMeal(request);
-    }
+    }*/
 
 }

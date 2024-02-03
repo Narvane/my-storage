@@ -10,7 +10,7 @@ public class FoodEntityConverterImpl extends AbstractConverterImpl<Food, FoodEnt
 
     @Override
     public FoodEntity toEntity(Food food) {
-        var foodEntity = new FoodEntity(food.getUuid(), food.getName());
+        var foodEntity = new FoodEntity(food.getId(), food.getName());
         foodEntity.setNew(food.isNew());
         foodEntity.setProtein(food.getProtein());
         foodEntity.setCarbs(food.getCarbs());

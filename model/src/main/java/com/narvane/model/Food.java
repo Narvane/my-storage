@@ -1,7 +1,9 @@
 package com.narvane.model;
 
+import com.narvane.model.interfaces.Eatable;
+import com.narvane.model.interfaces.IdentityModel;
+
 import java.util.Objects;
-import java.util.Optional;
 import java.util.UUID;
 
 public class Food extends AbstractIdentityModel implements Eatable, IdentityModel {

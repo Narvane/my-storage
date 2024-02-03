@@ -1,7 +1,7 @@
 package com.narvane.service.meal.impl;
 
 import com.narvane.exception.ModelNotFoundException;
-import com.narvane.model.Model;
+import com.narvane.model.interfaces.Model;
 import com.narvane.repository.GenericRepository;
 import com.narvane.service.meal.GenericService;
 

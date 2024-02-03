@@ -1,7 +1,7 @@
 package com.narvane.inframvc.converter;
 
 import com.narvane.inframvc.entity.AbstractEntity;
-import com.narvane.model.Model;
+import com.narvane.model.interfaces.Model;
 
 import java.util.List;
 import java.util.Set;

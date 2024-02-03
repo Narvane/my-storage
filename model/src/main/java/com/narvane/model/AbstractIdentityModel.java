@@ -1,5 +1,7 @@
 package com.narvane.model;
 
+import com.narvane.model.interfaces.IdentityModel;
+
 import java.util.UUID;
 
 abstract class AbstractIdentityModel implements IdentityModel {
@@ -25,7 +27,7 @@ abstract class AbstractIdentityModel implements IdentityModel {
         }
     }
 
-    public UUID getUuid() {
+    public UUID getId() {
         return uuid;
     }
 

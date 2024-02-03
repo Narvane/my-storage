@@ -1,6 +1,6 @@
 package com.narvane.repository;
 
-import com.narvane.model.Model;
+import com.narvane.model.interfaces.Model;
 
 import java.util.List;
 import java.util.Optional;

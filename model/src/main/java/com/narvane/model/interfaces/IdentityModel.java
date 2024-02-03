@@ -1,4 +1,4 @@
-package com.narvane.model;
+package com.narvane.model.interfaces;
 
 import java.util.UUID;
 
@@ -8,6 +8,6 @@ public interface IdentityModel extends Model {
 
     boolean isNew();
 
-    public UUID getUuid();
+    public UUID getId();
 
 }

@@ -14,7 +14,7 @@ public class CreateMealResponseConverterImpl extends AbstractResponseConverterIm
     @Override
     public CreateMealDTO.Response toResponse(Meal model) {
         return CreateMealDTO.Response.builder()
-                .id(model.getUuid().toString())
+                .id(model.getId().toString())
                 .name(model.getName())
                 .protein(model.getProtein())
                 .carbs(model.getCarbs())
@@ -33,7 +33,7 @@ public class CreateMealResponseConverterImpl extends AbstractResponseConverterIm
             var food = portion.getFood();
 
             var foodDto = new CreateMealDTO.Response.Food();
-            foodDto.setId(food.getUuid().toString());
+            foodDto.setId(food.getId().toString());
             foodDto.setName(food.getName());
             foodDto.setProtein(food.getProtein());
             foodDto.setCarbs(food.getCarbs());

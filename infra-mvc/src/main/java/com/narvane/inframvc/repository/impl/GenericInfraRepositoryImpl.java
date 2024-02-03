@@ -3,7 +3,7 @@ package com.narvane.inframvc.repository.impl;
 import com.narvane.inframvc.converter.GenericConverter;
 import com.narvane.inframvc.entity.AbstractEntity;
 import com.narvane.inframvc.repository.jpa.GenericJpaRepository;
-import com.narvane.model.Model;
+import com.narvane.model.interfaces.Model;
 import com.narvane.repository.GenericRepository;
 
 import java.util.*;

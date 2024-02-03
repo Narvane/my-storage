@@ -1,6 +1,6 @@
 package com.narvane.service.meal;
 
-import com.narvane.model.Model;
+import com.narvane.model.interfaces.Model;
 
 import java.util.List;
 import java.util.Set;
