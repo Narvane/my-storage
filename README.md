@@ -29,3 +29,8 @@ _Soon..._
 **Install the project to develop**
 
 _Soon..._
+
+
+**Releases**
+
+_Soon..._
