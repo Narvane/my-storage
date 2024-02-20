@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /web-mvc
+  port: 8081
+spring:
+  messages:
+    basename: messages
+    encoding: UTF-8
+  datasource:
+    url: jdbc:postgresql://localhost:5432/my-storage
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  flyway:
+    url: jdbc:postgresql://localhost:5432/my-storage
+    locations: filesystem:migrations/src/main/resources/migration
+    user: root
+    password: root
