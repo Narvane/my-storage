@@ -4,7 +4,7 @@ ENV SPRING_PROFILES_ACTIVE=prod
 
 WORKDIR /app
 
-COPY target/my-storage*.jar /app/my-storage.jar
+COPY /api-webmvc/target/api-webmvc*.jar /app/my-storage.jar
 
 EXPOSE 8081
 
