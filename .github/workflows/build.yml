@@ -25,15 +25,24 @@ jobs:
       - name: Build Docker image
         run: docker build -t my-storage-image .
 
-  publish:
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Log into GitHub Packages
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u "${{ github.actor }}" --password-stdin
 
       - name: Tag Docker image
-        run: docker tag my-storage-image:latest docker.pkg.github.com/narvane/my-storage/my-storage-image:${{ github.event.release.tag_name }}
+        run: docker tag my-storage-image docker.pkg.github.com/narvane/my-storage/my-storage-image:${{ github.event.release.tag_name }}
 
       - name: Push Docker image to GitHub Packages
         run: docker push docker.pkg.github.com/narvane/my-storage/my-storage-image:${{ github.event.release.tag_name }}
+
+#  publish:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Log into GitHub Packages
+#        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u "${{ github.actor }}" --password-stdin
+#
+#      - name: Tag Docker image
+#        run: docker tag my-storage-image:latest docker.pkg.github.com/narvane/my-storage/my-storage-image:${{ github.event.release.tag_name }}
+#
+#      - name: Push Docker image to GitHub Packages
+#        run: docker push docker.pkg.github.com/narvane/my-storage/my-storage-image:${{ github.event.release.tag_name }}
