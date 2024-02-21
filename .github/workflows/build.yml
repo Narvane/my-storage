@@ -25,71 +25,14 @@ jobs:
       - name: Build Docker image
         run: docker build -t my-storage-image .
 
-      - name: Publish Docker image as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-storage-image
-          path: .
+      - name: Log into GitHub Packages
+        run: echo "${{ secrets.PERSONAL_TOKEN }}" | docker login docker.pkg.github.com -u "${{ github.actor }}" --password-stdin
 
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
+      - name: Tag Docker image
+        run: docker tag my-storage-image docker.pkg.github.com/narvane/my-storage/my-storage-image:${{ github.event.release.tag_name }}
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Download Docker image artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: my-storage-image
-          path: .
-
-      - name: Log into GitHub Container Registry
-        run: echo "${{ secrets.PERSONAL_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
-
-      - name: Tag Docker image for GitHub Container Registry
-        run: docker tag my-storage-image ghcr.io/narvane/my-storage-image:${{ github.event.release.tag_name }}
-
-      - name: Push Docker image to GitHub Container Registry
-        run: docker push ghcr.io/narvane/my-storage-image:${{ github.event.release.tag_name }}
-
-
-#name: Build and Publish
-#
-#on:
-#  release:
-#    types:
-#      - created
-#
-#jobs:
-#  build:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v2
-#
-#      - name: Set up JDK
-#        uses: actions/setup-java@v2
-#        with:
-#          java-version: '17'
-#          distribution: 'adopt'
-#
-#      - name: Build with Maven
-#        run: mvn clean install
-#
-#      - name: Build Docker image
-#        run: docker build -t my-storage-image .
-#
-#      - name: Log into GitHub Packages
-#        run: echo "${{ secrets.PERSONAL_TOKEN }}" | docker login docker.pkg.github.com -u "${{ github.actor }}" --password-stdin
-#
-#      - name: Tag Docker image
-#        run: docker tag my-storage-image docker.pkg.github.com/narvane/my-storage/my-storage-image:${{ github.event.release.tag_name }}
-#
-#      - name: Push Docker image to GitHub Packages
-#        run: docker push docker.pkg.github.com/narvane/my-storage/my-storage-image:${{ github.event.release.tag_name }}
+      - name: Push Docker image to GitHub Packages
+        run: docker push docker.pkg.github.com/narvane/my-storage/my-storage-image:${{ github.event.release.tag_name }}
 
 #  publish:
 #    runs-on: ubuntu-latest
