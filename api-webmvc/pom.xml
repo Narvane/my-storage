@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>17</java.version>
+        <start-class>com.narvane.apimvc.ApiWebMvcApplication</start-class>
     </properties>
 
     <dependencies>
@@ -78,6 +79,13 @@
                         </exclude>
                     </excludes>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

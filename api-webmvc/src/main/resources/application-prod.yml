@@ -7,16 +7,16 @@ spring:
     basename: messages
     encoding: UTF-8
   datasource:
-    url: jdbc:postgresql://localhost:5432/my-storage
-    username: root
-    password: root
+    url: jdbc:postgresql://postgres-service:5432/my-storage
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: validate
     show-sql: true
   flyway:
-    url: jdbc:postgresql://localhost:5432/my-storage
+    url: jdbc:postgresql://postgres-service:5432/my-storage
     locations: filesystem:migrations/src/main/resources/migration
-    user: root
-    password: root
+    user: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
