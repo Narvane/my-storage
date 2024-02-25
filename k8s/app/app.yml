@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-storage
-          image: ghcr.io/narvane/my-storage/my-storage-image:v0.1.3
+          image: ghcr.io/narvane/my-storage/my-storage-image:v0.1.5
           ports:
             - containerPort: 8081
           env:

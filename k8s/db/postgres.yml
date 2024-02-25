@@ -1,43 +1,81 @@
+#apiVersion: apps/v1
+#kind: StatefulSet
+#metadata:
+#  name: postgres
+#spec:
+#  selector:
+#    matchLabels:
+#      app: postgres
+#  serviceName: postgres
+#  replicas: 2
+#  template:
+#    metadata:
+#      labels:
+#        app: postgres
+#    spec:
+#      containers:
+#        - name: postgres
+#          image: postgres:13
+#          env:
+#            - name: POSTGRES_DB
+#              value: my-storage
+#            - name: POSTGRES_USER
+#              value: admin
+#            - name: POSTGRES_PASSWORD
+#              value: admin
+#          ports:
+#            - name: postgres
+#              containerPort: 5432
+#          volumeMounts:
+#            - name: data
+#              mountPath: /var/lib/postgresql/data
+#  volumeClaimTemplates:
+#    - metadata:
+#        name: data
+#      spec:
+#        accessModes: ["ReadWriteOnce"]
+#        resources:
+#          requests:
+#            storage: 1Gi
+#
+
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: postgres
+  labels:
+    app: postgres
 spec:
-  selector:
-    matchLabels:
-      app: postgres
-  serviceName: postgres
+  serviceName: postgres-service
   replicas: 2
   template:
     metadata:
+      name: postgres
       labels:
         app: postgres
     spec:
+      volumes:
+        - name: postgres
+          persistentVolumeClaim:
+            claimName: postgres-pc-volume-claim
       containers:
         - name: postgres
-          image: postgres:latest
-          env:
-            - name: POSTGRES_USER
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secret
-                  key: POSTGRES_USER
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secret
-                  key: POSTGRES_PASSWORD
-          ports:
-            - name: postgres
-              containerPort: 5432
+          image: postgres
+          imagePullPolicy: IfNotPresent
           volumeMounts:
-            - name: data
-              mountPath: /var/lib/postgresql/data
-  volumeClaimTemplates:
-    - metadata:
-        name: data
-      spec:
-        accessModes: ["ReadWriteOnce"]
-        resources:
-          requests:
-            storage: 1Gi
+            - mountPath: "/var/lib/postgresql/data"
+              name: postgres
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: postgres
