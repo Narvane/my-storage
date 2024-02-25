@@ -7,7 +7,7 @@ spring:
     basename: messages
     encoding: UTF-8
   datasource:
-    url: jdbc:postgresql://postgres:5432/my-storage
+    url: jdbc:postgresql://postgres-service:5432/my-storage
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
   jpa:
@@ -16,7 +16,7 @@ spring:
       ddl-auto: validate
     show-sql: true
   flyway:
-    url: jdbc:postgresql://postgres:5432/my-storage
+    url: jdbc:postgresql://postgres-service:5432/my-storage
     locations: classpath:/migration
     user: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
