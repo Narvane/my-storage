@@ -17,6 +17,5 @@ spring:
     show-sql: true
   flyway:
     url: jdbc:postgresql://postgres-service:5432/my-storage
-    locations: classpath:/migration
     user: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
