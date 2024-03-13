@@ -28,7 +28,7 @@ spec:
             - name: FLYWAY_PLACEHOLDERS_USERNAME
               valueFrom:
                 configMapKeyRef:
-                  name: postgres-config
+                  name: postgres-configmap
                   key: POSTGRES_USER
             - name: FLYWAY_PLACEHOLDERS_PASSWORD
               valueFrom:
