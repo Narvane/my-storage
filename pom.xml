@@ -13,7 +13,6 @@
         <module>model</module>
         <module>infra-mvc</module>
         <module>api-webmvc</module>
-        <module>migrations</module>
     </modules>
 
     <properties>

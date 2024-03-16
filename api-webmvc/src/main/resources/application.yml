@@ -17,6 +17,5 @@ spring:
     show-sql: true
   flyway:
     url: jdbc:postgresql://localhost:5432/my-storage
-    #locations: filesystem:migrations/src/main/resources/migration
     user: root
     password: root
