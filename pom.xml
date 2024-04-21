@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.narvane</groupId>
-    <artifactId>mystorage</artifactId>
+    <artifactId>my-storage</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
         <module>model</module>
-        <module>infra-mvc</module>
-        <module>api-webmvc</module>
+        <module>infra</module>
+        <module>app</module>
     </modules>
 
     <properties>
