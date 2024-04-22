@@ -24,7 +24,6 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: https://accounts.google.com
-
 openapi:
   service:
     title: MyStorage API
