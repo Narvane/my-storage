@@ -1,0 +1,21 @@
+server:
+  servlet:
+    context-path: /my-storage
+  port: 8081
+spring:
+  messages:
+    basename: messages
+    encoding: UTF-8
+  datasource:
+    url: jdbc:postgresql://my-storage-db/my-storage
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  flyway:
+    url: jdbc:postgresql://my-storage-db/my-storage
+    user: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
